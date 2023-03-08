@@ -81,6 +81,10 @@ def get_args_parser():
                         help='Use MSE loss for features as target.')
     parser.add_argument('--relative', action='store_true', help='Use relative learning loss or not.')
     parser.set_defaults(relative=True)
+    parser.add_argument('--dino_path', default='none', type=str,
+                        help='Pre-trained DINO for feature distillation (ViT-B/16).')
+    parser.add_argument('--clip_path', default='none', type=str,
+                        help='Pre-trained CLIP for feature distillation (ViT-B/16).')
 
     # Optimizer parameters
     parser.add_argument('--weight_decay', type=float, default=0.05,
@@ -179,13 +183,10 @@ def main(args):
             
             if args.learn_feature_loss == 'dino':
                 model_teacher = timm.models.vit_base_patch16_224()
-                model_teacher.load_state_dict(
-                    torch.load('/path/to/dino/dino_vitbase16_pretrain.pth'),
-                    strict=False)
+                model_teacher.load_state_dict(torch.load(args.dino_path), strict=False)
             else:
                 from models_clip import build_model
-                state_dict = torch.load('/path/to/clip/clip_vitbase16_pretrain.pth',
-                                        map_location='cpu')
+                state_dict = torch.load(args.clip_path, map_location='cpu')
                 model_clip = build_model(state_dict)
                 model_clip.load_state_dict(state_dict, strict=False)
                 model_clip.float()
@@ -208,13 +209,10 @@ def main(args):
 
             if args.learn_feature_loss == 'dino':
                 model_teacher = timm.models.vit_base_patch16_224()
-                model_teacher.load_state_dict(
-                    torch.load('/data/code/pretrain/checkpoints/pretrain/dino_vitbase16_pretrain.pth'),
-                    strict=False)
+                model_teacher.load_state_dict(torch.load(args.dino_path), strict=False)
             else:
                 from models_clip import build_model
-                state_dict = torch.load('/data/code/pretrain/checkpoints/pretrain/clip_vitbase16_pretrain.pth',
-                                        map_location='cpu')
+                state_dict = torch.load(args.clip_path, map_location='cpu')
                 model_clip = build_model(state_dict)
                 model_clip.load_state_dict(state_dict, strict=False)
                 model_clip.float()
