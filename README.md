@@ -9,7 +9,7 @@ by
 <a href="https://openreview.net/profile?id=~Jin_Xie9" target="_blank">Jin Xie</a>, and
 <a href="https://scholar.google.com/citations?user=qxWfV6cAAAAJ" target="_blank">Zhaoxiang Zhang</a>
 
-**[[arXiv]](todo)**  **[[Paper]](src/paper.pdf)**
+**[[arXiv]](https://arxiv.org/abs/2304.05919)**  **[[Paper]](https://arxiv.org/pdf/2304.05919.pdf)**
 
 ## Notes
 
@@ -17,7 +17,7 @@ by
 
 * This repo is based on [`timm==0.3.2`](https://github.com/rwightman/pytorch-image-models), for which a [fix](https://github.com/rwightman/pytorch-image-models/issues/420#issuecomment-776459842) is needed to work with PyTorch 1.8.1+.
 
-* This repo is the official implementation of [Hard Patches Mining for Masked Image Modeling](https://arxiv.org/pdf/xxx.pdf). It includes codes and models for the following tasks:
+* This repo is the official implementation of [Hard Patches Mining for Masked Image Modeling](https://arxiv.org/pdf/2304.05919.pdf). It includes codes and models for the following tasks:
 > **ImageNet-1K Pretrain**: See [PRETRAIN.md](PRETRAIN.md).\
 > **ImageNet-1L Finetune**: See [FINETUNE.md](FINETUNE.md).
 
