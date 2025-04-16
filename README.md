@@ -12,7 +12,7 @@ by
 
 **[[arXiv]](https://arxiv.org/abs/2304.05919)**  **[[Paper]](https://arxiv.org/pdf/2304.05919.pdf)**
 
-:bell: :bell: :bell: **[[An extension of this paper]](https://arxiv.org/abs/2312.13714) has been accepted by TPAMI** [[arXiv]], where we successfully adapted HPM to masked *video* modeling benchmarks with almost no modifications!
+:bell: :bell: :bell: **[[An extension of this paper]](https://arxiv.org/abs/2312.13714) has been accepted by TPAMI**, where we successfully adapted HPM to masked *video* modeling benchmarks with almost no modifications!
 
 ## Notes
 
